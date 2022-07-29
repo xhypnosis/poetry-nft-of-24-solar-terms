@@ -4,13 +4,12 @@ import axios from 'axios'
 import { Row, Col } from 'antd'
 import logo from '@/images/logo.png'
 import { Provider } from '@idealight-labs/anyweb-js-sdk'
-import checkAgent from '@/javascripts/checkAgent'
-
+import checkAgent from '@/scripts/checkAgent'
+console.log()
 export default function Home() {
-
     conflux.provider = new Provider({
         logger: console,
-        appId: "53622ec3-c49c-4124-9f6f-e969c05e01c0",
+        appId: import.meta.env.VITE_APPID
     })
     conflux.provider.on("ready", () => {
         console.log("Solarterm: AnyWeb provider is ready")
@@ -43,7 +42,7 @@ export default function Home() {
             .request({
                 method: "cfx_accounts",
                 params: [{
-                    availableNetwork: [1029],
+                    availableNetwork: [1],
                     scopes: ["baseInfo", "identity"],
                 }],
             })
@@ -56,12 +55,13 @@ export default function Home() {
                     address[0],
                     code
                 )
-                if (res.networkId != 1029) {
-                    confirm(
-                        "网络错误，请先取消授权，然后重新授权，在AnyWeb钱包中选择正式网"
-                    )
-                    return
-                }
+                // if (res.networkId != 1029) {
+                //     confirm(
+                //         "网络错误，请先取消授权，然后重新授权，在AnyWeb钱包中选择正式网"
+                //     )
+                //     return
+                // }
+
                 // Decode if user address string is url encoded
                 const decodedAddr = decodeURIComponent(address[0])
                 setWallet(decodedAddr)

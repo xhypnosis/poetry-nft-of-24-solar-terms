@@ -31,6 +31,6 @@ app.on('error', (err, ctx) => {
 });
 
 // Note: 0.0.0.0 to be given as host in order to be accessed from outside interface
-app.listen(2020, '0.0.0.0', () => {
-    console.log('Server is starting at port 2020')
+app.listen(2000, '0.0.0.0', () => {
+    console.log('Server is starting at port 2000')
 })

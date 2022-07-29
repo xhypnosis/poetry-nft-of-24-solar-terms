@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Divider } from 'antd'
-import checkAgent from '@/javascripts/checkAgent'
+import checkAgent from '@/scripts/checkAgent'
 import logo from '@/images/logo.png'
 import Ju from '@/images/Ju.png'
 
@@ -43,7 +43,7 @@ export default function Display() {
                     Ju&nbsp;&nbsp;Protocol
                 </div>
                 <div className="w-5 h-24 absolute top-[3.75rem] right-[7.5rem] bottom-0 left-0 m-auto font-medium">
-                    <span>小<br />暑</span>
+                    <span>大<br />暑</span>
                     <p className="mt-1 mb-0 font-[Times] text-[19px]">#</p>
                     <p className="tracking-[-0.1rem] text-[15px] leading-tight font-normal">&nbsp;{ verseId }</p>
                 </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import checkAgent from '@/javascripts/checkAgent'
+import checkAgent from '@/scripts/checkAgent'
 
 export default function Result() {
     const [backSize, setBackSize] = useState("")

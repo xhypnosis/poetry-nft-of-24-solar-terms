@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Button, Table } from 'antd'
-import { wallet } from '@/javascripts/wallet'
+import { wallet } from '@/scripts/wallet'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 

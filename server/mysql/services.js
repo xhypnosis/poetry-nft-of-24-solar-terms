@@ -50,7 +50,7 @@ let services = {
     },
     // 检查诗句是否被占用
     checkOccupancy: (obj) => {
-        let sql = `select Occupied from xiaoshu where VerId=?`
+        let sql = `select Occupied from dashu where VerId=?`
         return services.query(sql, obj)
     },
     checkUser: (obj) => {
@@ -58,22 +58,22 @@ let services = {
         return services.query(sql, obj)
     },
     selectVerId: (obj) => {
-        let sql = `select VerId from xiaoshu where Verse=?`
+        let sql = `select VerId from dashu where Verse=?`
         return services.query(sql, obj)
     },
     // 根据id获取诗句
     selectVerse: (obj) => {
-        let sql = `select Verse from xiaoshu where VerId=?`
+        let sql = `select Verse from dashu where VerId=?`
         return services.query(sql, obj)
     },
     // 获取未被领取的诗句id
     unoccupiedVerId: () => {
-        let sql = `select VerId from xiaoshu where Occupied=false`
+        let sql = `select VerId from dashu where Occupied=false`
         return services.query(sql)
     },
     // 诗句被领取后更新
     updateOccupancy: (obj) => {
-        let sql = `update xiaoshu set Occupied=true where VerId =?`
+        let sql = `update dashu set Occupied=true where VerId =?`
         return services.query(sql, obj)
     },
     checkAdminPass: () => {
